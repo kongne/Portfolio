@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="{{ app()->getLocale() == 'fa' ? 'rtl' : 'ltr' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html dir="{{ app()->getLocale() == 'fa' ? 'rtl' : 'rtl' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="UTF-8">
@@ -33,7 +33,7 @@
 
   @stack('styles')
 
-  <title>{{ env('APP_NAME') . ' | لاگین' . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
+  <title>{{ env('APP_NAME') . ' | Portfolio' . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
 </head>
 
 <body>

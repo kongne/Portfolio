@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'خانه', 'my_class' => 'home'])
+@extends('layouts.app', ['title' => 'Home', 'my_class' => 'home'])
 
 @section('content')
   <!-- Main Content Starts -->
@@ -14,7 +14,7 @@
           </h1>
           <p class="open-sans-font">{{ $homeData->description }}</p>
           <a class="button" href="{{ route('about') }}">
-            <span class="button-text">اطلاعات بیشتر درباره من...</span>
+            <span class="button-text">About</span>
             <span class="button-icon fa fa-arrow-left"></span>
           </a>
         </div>

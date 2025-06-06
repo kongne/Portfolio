@@ -1,16 +1,16 @@
-@extends('layouts.app', ['title' => 'ارتباط با من', 'my_class' => 'contact'])
+@extends('layouts.app', ['title' => 'Contact', 'my_class' => 'contact'])
 
 @php
   $socials = ['telegram', 'instagram', 'twitter', 'youtube', 'facebook', 'linkedin', 'github'];
 
-  $inputs = [['name' => 'name', 'title' => 'نام', 'type' => 'text'], ['name' => 'email', 'title' => 'ایمیل', 'type' => 'email'], ['name' => 'subject', 'title' => 'موضوع', 'type' => 'text']];
+  $inputs = [['name' => 'name', 'title' => 'Name', 'type' => 'text'], ['name' => 'email', 'title' => 'Email', 'type' => 'email'], ['name' => 'subject', 'title' => 'Subject', 'type' => 'text']];
 @endphp
 
 @section('content')
   <!-- Page Title Starts -->
   <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
-    <h1>ارتباط <span>با من</span></h1>
-    <span class="title-bg">ارتباط</span>
+    <h1>Get in touch with <span> Me </span></h1>
+    <span class="title-bg">Get in touch with Me</span>
   </section>
   <!-- Page Title Ends -->
   <!-- Main Content Starts -->
@@ -23,13 +23,13 @@
           <p class="open-sans-font mb-3 description">{{ $contact->description }}</p>
           <p class="open-sans-font custom-span-contact position-relative">
             <i class="fa fa-envelope-open position-absolute"></i>
-            <span class="d-block">ایمیل من</span>
+            <span class="d-block">Mailing me</span>
             <a class="text-white" href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
           </p>
           <p class="open-sans-font custom-span-contact position-relative">
             <i class="fa fa-phone-square position-absolute"></i>
-            <span class="d-block">تلفن من</span>
-            <a class="text-white" href="tel:{{ $contact->phone_number }}" dir="ltr">{{ $contact->phone_number }}</a>
+            <span class="d-block">Call me at</span>
+            <a class="text-white" href="tel:{{ $contact->phone_number }}" dir="rtl">{{ $contact->phone_number }}</a>
           </p>
           <ul class="social list-unstyled pt-1 mb-5 d-flex">
 
@@ -71,7 +71,7 @@
                 @endforeach
 
                 <div class="col-12">
-                  <textarea name="message" placeholder="پیام شما">{{ old('message') }}</textarea>
+                  <textarea name="message" placeholder="Your message">{{ old('message') }}</textarea>
                   @error('message')
                     <div class="text-danger small">
                       {{ $message }}
@@ -79,7 +79,7 @@
                   @enderror
 
                   <button type="submit" class="button mt-4">
-                    <span class="button-text">ارسال پیام</span>
+                    <span class="button-text">Send</span>
                     <span class="button-icon fa fa-send"></span>
                   </button>
                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'مقاله', 'my_class' => 'blog-post'])
+@extends('layouts.app', ['title' => 'Blog-post', 'my_class' => 'blog-post'])
 
 @section('content')
   <!-- Page Title Starts -->

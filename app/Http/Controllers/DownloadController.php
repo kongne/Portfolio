@@ -14,7 +14,7 @@ public function download($file)
     if (file_exists($path)) {
         return response()->download($path, 'Resume.' . pathinfo($file, PATHINFO_EXTENSION));
     } else {
-        return redirect()->back()->with('error', 'فایل موردنظر موجود نمی‌باشد!');
+        return redirect()->back()->with('error', 'Sorry, the required resource was not found!');
     }
 }
 }

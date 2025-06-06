@@ -1,10 +1,10 @@
-@extends('layouts.app', ['title' => 'درباره من', 'my_class' => 'about'])
+@extends('layouts.app', ['title' => 'About', 'my_class' => 'about'])
 
 @section('content')
   <!-- Page Title Starts -->
   <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
-    <h1>درباره <span>من</span></h1>
-    <span class="title-bg">اطلاعات</span>
+    <h1>About <span>me</span></h1>
+    <span class="title-bg">About me</span>
   </section>
   <!-- Page Title Ends -->
   <!-- Main Content Starts -->
@@ -15,56 +15,56 @@
         <div class="col-12 col-lg-5 col-xl-6">
           <div class="row">
             <div class="col-12">
-              <h3 class="text-uppercase custom-title mb-0 ft-wt-600">اطلاعات شخصی</h3>
+              <h3 class="text-uppercase custom-title mb-0 ft-wt-600">Personal info</h3>
             </div>
             <div class="col-12 d-block d-sm-none">
               <img src="{{ asset('front/img/img-mobile.jpg') }}" class="img-fluid main-img-mobile" alt="my picture" />
             </div>
             <div class="col-6">
-              <ul class="about-list list-unstyled open-sans-font">
-                <li> <span class="title">نام :</span> <span
+              <ul class="about-list list-unstyled BespokeStencil-Bold">
+                <li> <span class="title">Name :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->name }}</span>
                 </li>
-                <li> <span class="title">نام خانوادگی :</span> <span
+                <li> <span class="title">Surname:</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->family }}</span>
                 </li>
-                <li> <span class="title">سن :</span> <span
+                <li> <span class="title">Age :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->age }}</span>
                 </li>
-                <li> <span class="title">ملیت :</span> <span
+                <li> <span class="title">Nationality :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block"
                     style="color: gold">{{ $aboutData->country }}</span>
                 </li>
-                <li> <span class="title">شغل :</span> <span
+                <li> <span class="title">Job Title :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->job }}</span>
                 </li>
               </ul>
             </div>
             <div class="col-6">
-              <ul class="about-list list-unstyled open-sans-font">
-                <li> <span class="title">آدرس :</span> <span
+              <ul class="about-list list-unstyled bespoke-stencil-font">
+                <li> <span class="title">Address :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->address }}</span>
                 </li>
-                <li> <span class="title">شماره تماس :</span> <span
+                <li> <span class="title">Phone :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">
                     <a href="tel:{{ $aboutData->phone_number }}" dir="ltr">{{ $aboutData->phone_number }}</a>
                   </span> </li>
-                <li> <span class="title">ایمیل :</span> <span
+                <li> <span class="title">E-mail :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">
                     <a class="email" href="mailto:{{ $aboutData->email }}">{{ $aboutData->email }}</a>
                   </span> </li>
-                <li> <span class="title">گیت‌هاب :</span> <span
+                <li> <span class="title">Github Profile :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">
                     <a target="_blank" href="{{ 'https://github.com/' . $aboutData->github }}">{{ $aboutData->github }}</a>
                   </span> </li>
-                <li> <span class="title">زبان :</span> <span
+                <li> <span class="title">Language :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->language }}</span>
                 </li>
               </ul>
             </div>
             <div class="col-12 mt-3">
               <a class="button" href="{{ route('download', ['file' => base64_encode($aboutData->resume_file['relative_path']) ]) }}">
-                <span class="button-text">دانلود رزومه</span>
+                <span class="button-text">My CV</span>
                 <span class="button-icon fa fa-download"></span>
               </a>
             </div>
@@ -76,22 +76,21 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-6">
               <div class="box-stats with-margin">
-                <h3 class="poppins-font position-relative">{{ $aboutData->experiences }}</h3>
-                <p class="open-sans-font m-0 position-relative text-uppercase">سال <span class="d-block">تجربه</span></p>
+                <h3 class="BespokeStencil-Bold position-relative">{{ $aboutData->experiences }}</h3>
+                <p class="BespokeStencil-Bold m-0 position-relative text-uppercase">Years of<span class="d-block"> Experience</span></p>
               </div>
             </div>
             <div class="col-6">
               <div class="box-stats with-margin">
                 <h3 class="poppins-font position-relative">{{ $aboutData->projects }}</h3>
-                <p class="open-sans-font m-0 position-relative text-uppercase">پروژه<span class="d-block">تکمیل شده</span>
+                <p class="open-sans-font m-0 position-relative text-uppercase">Projects <span class="d-block">Completed</span>
                 </p>
               </div>
             </div>
             <div class="col-6">
               <div class="box-stats">
                 <h3 class="poppins-font position-relative">{{ $aboutData->awards }}</h3>
-                <p class="open-sans-font m-0 position-relative text-uppercase">جایزه <span class="d-block">برنده
-                    شده</span></p>
+                <p class="open-sans-font m-0 position-relative text-uppercase">Prize<span class="d-block"> Awarded</span></p>
               </div>
             </div>
           </div>
@@ -102,8 +101,7 @@
       <!-- Skills Starts -->
       <div class="row justify-content-center">
         <div class="col-12">
-          <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">مهارت های
-            من </h3>
+          <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">Skills</h3>
         </div>
         @foreach ($skills as $skill)
           <div class="col-6 col-md-3 mb-3 mb-sm-5">
@@ -123,8 +121,7 @@
       <!-- Experience & Education Starts -->
       <div class="row">
         <div class="col-12">
-          <h3 class="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">تجربه <span>&</span>
-            تحصیلات </h3>
+          <h3 class="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">Experience <span>&</span> Education </h3>
         </div>
         <div class="w-100 m-15px-tb">
           <div class="resume-box w-100">

@@ -1,15 +1,15 @@
-@extends('layouts.app', ['title' => 'نمونه کار', 'my_class' => 'portfolio'])
+@extends('layouts.app', ['title' => 'My works', 'my_class' => 'portfolio'])
 
 @section('content')
   <!-- Page Title Starts -->
   <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
     <h1>
-      نمونه کارهای
+      My Works
       <span>
         من
       </span>
     </h1>
-    <span class="title-bg">نمونه کار</span>
+    <span class="title-bg">My Works</span>
   </section>
   <!-- Page Title Ends -->
   <!-- Main Content Starts -->
