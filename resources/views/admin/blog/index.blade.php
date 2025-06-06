@@ -1,21 +1,21 @@
-@extends('admin.layouts.app', ['title' => 'مقالات'])
+@extends('admin.layouts.app', ['title' => 'Articles'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'مقالات' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Articles' => '',
             ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>مقالات</h3>
+            <h3>Articles</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.blogs.create') }}">
-              ایجاد
+              Creating
               <i class="bi bi-plus-circle"></i>
             </a>
           </div>
@@ -25,13 +25,13 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>عنوان</th>
-                    <th>متن</th>
-                    <th>نویسنده</th>
-                    <th style="min-width: 6rem">کلمات کلیدی</th>
-                    <th>تصویر</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Title</th>
+                    <th>Text</th>
+                    <th> Author</th>
+                    <th style="min-width: 6rem">Keywords</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -48,11 +48,11 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button"
                             data-bs-toggle="dropdown">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.blogs.edit', ['blog' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.blogs.edit', ['blog' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.blogs.destroy', ['blog' => $item->id]) }}" method="post"
@@ -60,7 +60,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

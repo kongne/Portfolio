@@ -1,10 +1,10 @@
-@extends('admin.layouts.app', ['title' => 'مقالات | ایجاد'])
+@extends('admin.layouts.app', ['title' => 'Articles | Creating'])
 
 @php
   $inputs = [
-      ['name' => 'title', 'title' => 'عنوان', 'type' => 'text'],
-      ['name' => 'author', 'title' => 'نویسنده', 'type' => 'text'],
-      ['name' => 'keywords', 'title' => 'کلمات کلیدی', 'type' => 'text'],
+      ['name' => 'title', 'title' => 'Title', 'type' => 'text'],
+      ['name' => 'author', 'title' => 'Author', 'type' => 'text'],
+      ['name' => 'keywords', 'title' => 'Keywords', 'type' => 'text'],
   ];
 @endphp
 
@@ -13,18 +13,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'مقالات' => route('admin.panel.blogs.index'),
-            'ایجاد' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Articles' => route('admin.panel.blogs.index'),
+            'Creating' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ایجاد مقاله</h3>
+            <h3>Creating an article</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.blogs.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -45,7 +45,7 @@
               @endforeach
 
               <div class="mb-3 col-md-6">
-                <label for="photo" class="form-label">تصویر</label>
+                <label for="photo" class="form-label">Image</label>
                 <input type="file" name="photo" class="form-control" id="photo">
                 @error('photo')
                   <div class="text-danger fs-7">
@@ -55,7 +55,7 @@
               </div>
 
               <div class="mb-3 col-md-6">
-                <label for="text" class="form-label">متن</label>
+                <label for="text" class="form-label">Text</label>
                 <textarea name="text" class="form-control" id="text"></textarea>
                 @error('text')
                   <div class="text-danger fs-7">
@@ -67,7 +67,7 @@
               <div class="mb-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                   {{ old('status') ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -75,7 +75,7 @@
                 </div>
               @enderror
 
-              <button type="submit" class="btn btn-primary w-25">ارسال</button>
+              <button type="submit" class="btn btn-primary w-25">Send</button>
             </form>
           </div>
         </div>
