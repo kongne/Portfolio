@@ -3,8 +3,8 @@
 @section('content')
   <!-- Page Title Starts -->
   <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
-    <h1>مقاله <span>من</span></h1>
-    <span class="title-bg">مقاله</span>
+    <h1>Essay <span>I </span></h1>
+    <span class="title-bg">Essay</span>
   </section>
   <!-- Page Title Ends -->
   <!-- Main Content Starts -->

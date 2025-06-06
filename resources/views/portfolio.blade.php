@@ -4,9 +4,9 @@
   <!-- Page Title Starts -->
   <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
     <h1>
-      My Works
+      My
       <span>
-        من
+        Works
       </span>
     </h1>
     <span class="title-bg">My Works</span>
@@ -45,19 +45,19 @@
                     <h3>{{ $portfolio->title }}</h3>
                     <div class="row open-sans-font">
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">پروژه </span>: <span
+                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">Project </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->project_type }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-user-o pr-2"></i><span class="project-label">مشتری</span>: <span
+                        <i class="fa fa-user-o pr-2"></i><span class="project-label">Client</span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->customer }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-code pr-2"></i><span class="project-label">تکنولوژی </span>: <span
+                        <i class="fa fa-code pr-2"></i><span class="project-label">Technology</span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->technology }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-external-link pr-2"></i><span class="project-label">مشاهده سایت </span>: <span
+                        <i class="fa fa-external-link pr-2"></i><span class="project-label">visit</span>: <span
                           class="ft-wt-600 uppercase"><a href="{{ add_https_if_needed($portfolio->link) }}"
                             target="_blank">{{ $portfolio->link }}</a></span>
                       </div>
@@ -82,19 +82,19 @@
                     <h3>{{ $portfolio->title }}</h3>
                     <div class="row open-sans-font">
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">پروژه </span>: <span
+                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">Project</span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->project_type }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-user-o pr-2"></i><span class="project-label">مشتری</span>: <span
+                        <i class="fa fa-user-o pr-2"></i><span class="project-label">Client</span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->customer }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-code pr-2"></i><span class="project-label">تکنولوژی </span>: <span
+                        <i class="fa fa-code pr-2"></i><span class="project-label">Technology</span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->technology }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-external-link pr-2"></i><span class="project-label">مشاهده سایت </span>: <span
+                        <i class="fa fa-external-link pr-2"></i><span class="project-label">Visit</span>: <span
                           class="ft-wt-600 uppercase"><a href="{{ add_https_if_needed($portfolio->link) }}"
                             target="_blank">{{ $portfolio->link }}</a></span>
                       </div>
@@ -138,19 +138,19 @@
                     <h3>{{ $portfolio->title }}</h3>
                     <div class="row open-sans-font">
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">پروژه </span>: <span
+                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">Project </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->project_type }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-user-o pr-2"></i><span class="project-label">مشتری</span>: <span
+                        <i class="fa fa-user-o pr-2"></i><span class="project-label">Client </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->customer }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-code pr-2"></i><span class="project-label">تکنولوژی </span>: <span
+                        <i class="fa fa-code pr-2"></i><span class="project-label">Technology </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->technology }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-external-link pr-2"></i><span class="project-label">مشاهده سایت </span>: <span
+                        <i class="fa fa-external-link pr-2"></i><span class="project-label">Visit </span>: <span
                           class="ft-wt-600 uppercase"><a href="{{ add_https_if_needed($portfolio->link) }}"
                             target="_blank">{{ $portfolio->link }}</a></span>
                       </div>
@@ -178,19 +178,19 @@
                     <h3>{{ $portfolio->title }}</h3>
                     <div class="row open-sans-font">
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">پروژه </span>: <span
+                        <i class="fa fa-file-text-o pr-2"></i><span class="project-label">Project </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->project_type }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-user-o pr-2"></i><span class="project-label">مشتری</span>: <span
+                        <i class="fa fa-user-o pr-2"></i><span class="project-label">Client </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->customer }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-code pr-2"></i><span class="project-label">تکنولوژی </span>: <span
+                        <i class="fa fa-code pr-2"></i><span class="project-label">Technology </span>: <span
                           class="ft-wt-600 uppercase">{{ $portfolio->technology }}</span>
                       </div>
                       <div class="col-12 col-sm-6 mb-2">
-                        <i class="fa fa-external-link pr-2"></i><span class="project-label">مشاهده سایت </span>: <span
+                        <i class="fa fa-external-link pr-2"></i><span class="project-label">Visit </span>: <span
                           class="ft-wt-600 uppercase"><a href="{{ add_https_if_needed($portfolio->link) }}"
                             target="_blank">{{ $portfolio->link }}</a></span>
                       </div>

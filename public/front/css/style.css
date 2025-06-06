@@ -49,13 +49,22 @@ Version: 1.0
     src: url('../fonts/IRANSans(FaNum).ttf');
     src: url('../fonts/IRANSans(FaNum)_Bold.ttf') format('truetype'), /* IE6-8 */ url('../fonts/IRANSans(FaNum)_Light.ttf') format('truetype'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSans(FaNum)_Medium.ttf') format('truetype'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSans(FaNum)_UltraLight.ttf') format('truetype');
 }
+@font-face{
+     font-family: 'BespokeStencil-Bold';
+     src: url('../fonts/BespokeStencil-Bold.woff2') format('woff2'),
+       url('../fonts/BespokeStencil-Bold.woff') format('woff'),
+       url('../fonts/BespokeStencil-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 html {
     overflow-x: hidden;
     height: 100%;
 }
 
 body {
-    font-family: IRANSans, sans-serif;
+    font-family: Bespoke-Stencil-ExtraBold;
     font-size: 15px;
     color: #fff;
     font-weight: 500;
@@ -65,7 +74,7 @@ body {
     background-position: center;
     height: 100%;
     width: 100%;
-    background-color: #111;
+    background-color: #07393C;
 }
 
 .poppins-font {
@@ -75,6 +84,14 @@ body {
 .open-sans-font {
     font-family: IRANSans, sans-serif;
 }
+.stencil-emphasis {
+    font-family: Bespoke-Stencil-Bold, sans-serif;
+}
+
+.open-sans-font {
+    font-family: Bespoke-Stencil-ExtraBold, sans-serif;
+}
+
 
 hr.separator {
     border-top: 1px solid #252525;
@@ -124,7 +141,7 @@ body.home.light .bg {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    box-shadow: 0 0 7px rgba(0,0,0,.3);
+    box-shadow: 0 0 7px rgba(13, 115, 146, 0.3);
 }
 
 body.light .preloader .black_wall {

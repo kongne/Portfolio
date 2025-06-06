@@ -41,7 +41,7 @@
               </ul>
             </div>
             <div class="col-6">
-              <ul class="about-list list-unstyled bespoke-stencil-font">
+              <ul class="about-list list-unstyled BespokeStencil-Bold"> 
                 <li> <span class="title">Address :</span> <span
                     class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">{{ $aboutData->address }}</span>
                 </li>
@@ -76,8 +76,8 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-6">
               <div class="box-stats with-margin">
-                <h3 class="BespokeStencil-Bold position-relative">{{ $aboutData->experiences }}</h3>
-                <p class="BespokeStencil-Bold m-0 position-relative text-uppercase">Years of<span class="d-block"> Experience</span></p>
+                <h3 class="stencil-emphasis position-relative">{{ $aboutData->experiences }}</h3>
+                <p class="open-sans-font m-0 position-relative text-uppercase">Years of<span class="d-block"> Experience</span></p>
               </div>
             </div>
             <div class="col-6">

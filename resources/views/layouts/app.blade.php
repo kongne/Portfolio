@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="{{ app()->getLocale() == 'fa' ? 'rtl' : 'rtl' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html dir="{{ app()->getLocale() == 'fa' ? 'rtl' : 'ltr' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="utf-8">
@@ -16,7 +16,6 @@
   <link href="{{ asset('front/css/preloader.min.css') }}" rel="stylesheet">
   <link href="{{ asset('front/css/circle.css') }}" rel="stylesheet">
   <link href="{{ asset('front/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('front/css/bespoke-stencil.css') }}" rel="stylesheet">
   <link href="{{ asset('front/css/fm.revealator.jquery.min.css') }}" rel="stylesheet">
   <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
 
