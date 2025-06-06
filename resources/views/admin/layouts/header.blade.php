@@ -25,14 +25,14 @@
       </div>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item fs-7" href="{{ route('admin.panel.contact.messages.index', ['is_read' => false]) }}">
-            مشاهده پیام‌های خوانده نشده
+            View unread messages
             <span class="badge rounded-pill bg-red ms-2">
               {{ $unreadMessagesCount }}
             </span>
           </a></li>
-        <li><a class="dropdown-item fs-7" href="{{ route('admin.panel.contact.messages.index', ['is_read' => true]) }}"> مشاهده
-            پیام‌های خوانده شده </a></li>
-        <li><a class="dropdown-item fs-7" href="{{ route('admin.panel.contact.messages.index') }}"> مشاهده همه پیام‌ها </a>
+        <li><a class="dropdown-item fs-7" href="{{ route('admin.panel.contact.messages.index', ['is_read' => true]) }}"> View
+            Readed messages </a></li>
+        <li><a class="dropdown-item fs-7" href="{{ route('admin.panel.contact.messages.index') }}"> See all messages</a>
         </li>
       </ul>
     </div>
@@ -47,14 +47,14 @@
         @endif
         <div>
           <h6 class="fs-6 fw-bold text-gray-600 mb-0">{{ config('admin.local-name') }}</h6>
-          <p class="fs-8 text-gray-600 mb-0">مالک سایت</p>
+          <p class="fs-8 text-gray-600 mb-0">Site Owner</p>
         </div>
       </div>
       <ul class="dropdown-menu">
         <li>
           <a class="dropdown-item fs-7" href="{{ route('admin.panel.profile.index') }}">
             <i class="bi bi-person fs-5 me-1"></i>
-            پروفایل
+            Profile
           </a>
         </li>
         <li>
@@ -64,7 +64,7 @@
         <li>
           <a class="dropdown-item fs-7" href="javascript:" onclick="document.getElementById('logout-form').submit()">
             <i class="bi bi-box-arrow-left fs-5 me-1"></i>
-            خروج
+            Exit
           </a>
           <form id="logout-form" action="{{ route('logout') }}" method="post" class="d-none">
             @csrf

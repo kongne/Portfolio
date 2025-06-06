@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="{{ app()->getLocale() == 'fa' ? 'rtl' : 'ltr' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html dir="{{ app()->getLocale() == 'en' ? 'ltr' : 'rtl' }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
   @stack('styles')
 
-  <title>{{ config('admin.local-name') . ' | ادمین' . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
+  <title>{{ config('admin.local-name') . ' | Admin' . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
 </head>
 
 <body>

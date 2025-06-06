@@ -24,18 +24,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'اطلاعات شخصی' => route('admin.panel.about.personal.index'),
-            'ایجاد' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Personal Information' => route('admin.panel.about.personal.index'),
+            'Creating' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ایجاد اطلاعات شخصی</h3>
+            <h3>Create personal information</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.personal.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
