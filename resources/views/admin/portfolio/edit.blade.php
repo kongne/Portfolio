@@ -1,7 +1,7 @@
-@extends('admin.layouts.app', ['title' => 'نمونه کار | ویرایش'])
+@extends('admin.layouts.app', ['title' => 'Sample | Edit'])
 
 @php
-  $inputs = [['name' => 'title', 'title' => 'عنوان', 'type' => 'text'], ['name' => 'project_type', 'title' => 'نوع پروژه', 'type' => 'text'], ['name' => 'customer', 'title' => 'مشتری', 'type' => 'text'], ['name' => 'link', 'title' => 'لینک پروژه', 'type' => 'text'], ['name' => 'technology', 'title' => 'تکنولوژی', 'type' => 'text']];
+  $inputs = [['name' => 'title', 'title' => 'Title', 'type' => 'text'], ['name' => 'project_type', 'title' => 'Projetc title', 'type' => 'text'], ['name' => 'customer', 'title' => 'Customer', 'type' => 'text'], ['name' => 'link', 'title' => 'Project link', 'type' => 'text'], ['name' => 'technology', 'title' => 'Technology', 'type' => 'text']];
 @endphp
 
 @section('content')
@@ -9,18 +9,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'نمونه کار' => route('admin.panel.portfolios.index'),
-            'ویرایش' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Portfolio' => route('admin.panel.portfolios.index'),
+            'Edit' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ویرایش نمونه کار</h3>
+            <h3>Editing the sample</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.portfolios.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -44,7 +44,7 @@
                 </div>
               @endforeach
               <div class="mb-3 col-md-6">
-                <label for="featured_image" class="form-label">تصویر شاخص</label>
+                <label for="featured_image" class="form-label">Index image</label>
                 <input type="file" name="featured_image" class="form-control" id="featured_image">
                 <div class="text-info fs-7 mt-1">
                   {{ $portfolio->featured_image['relative_path'] }}
@@ -58,8 +58,8 @@
 
               <div class="mt-3 col-8 px-5 mx-auto">
                 <div class="alert alert-info text-center">
-                  توجه: برای رسانه نمونه کار خود، اجباری در استفاده از رسانه‌های زیر نیست و می‌توانید فقط از تصویر شاخص
-                  استفاده کنید!
+                 Note: For your portfolio media, it is not mandatory to use the following media and you can only use the index image!
+                  
                 </div>
               </div>
 
@@ -70,23 +70,23 @@
                      {{ session("media.{$mediaTypes[1]}") || (!request()->old() && $portfolio->media_type == $mediaTypes[1])
                          ? 'active'
                          : '' }}"
-                    data-bs-toggle="tab" data-bs-target="#tab1" type="button">رسانه
-                    اسلایدری</button>
+                    data-bs-toggle="tab" data-bs-target="#tab1" type="button">
+                    Slide Media</button>
                 </li>
                 <li class="nav-item">
                   <button
                     class="nav-link {{ session("media.{$mediaTypes[2]}") || (!request()->old() && $portfolio->media_type == $mediaTypes[2])
                         ? 'active'
                         : '' }}"
-                    data-bs-toggle="tab" data-bs-target="#tab2" type="button">رسانه
-                    ویدئویی</button>
+                    data-bs-toggle="tab" data-bs-target="#tab2" type="button">
+                    Video Media</button>
                 </li>
                 <li class="nav-item">
                   <button
                     class="nav-link {{ session("media.{$mediaTypes[3]}") || (!request()->old() && $portfolio->media_type == $mediaTypes[3])
                         ? 'active'
                         : '' }}"
-                    data-bs-toggle="tab" data-bs-target="#tab3" type="button">رسانه ویدئویی (آپلود در آپارات)</button>
+                    data-bs-toggle="tab" data-bs-target="#tab3" type="button">Video Media (Upload in Apartments)</button>
                 </li>
               </ul>
 
@@ -119,21 +119,21 @@
                     @enderror
 
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider1">
                       <div class="text-info fs-7 mt-1">
                         {{ $portfolio->media_type == $mediaTypes[1] ? $portfolio->media['slider'][0]['relative_path'] : '' }}
                       </div>
                     </div>
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider2">
                       <div class="text-info fs-7 mt-1">
                         {{ $portfolio->media_type == $mediaTypes[1] ? $portfolio->media['slider'][1]['relative_path'] : '' }}
                       </div>
                     </div>
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider3">
                       <div class="text-info fs-7 mt-1">
                         {{ $portfolio->media_type == $mediaTypes[1] ? $portfolio->media['slider'][2]['relative_path'] : '' }}
@@ -151,7 +151,7 @@
                   <input type="hidden" name="media_type" value="{{ $mediaTypes[2] }}">
 
                   <div class="mb-3 col-md-6 mx-auto">
-                    <label for="video" class="form-label">ویدئو</label>
+                    <label for="video" class="form-label">Video</label>
                     <input type="file" name="video" class="form-control" id="video">
                     <div class="text-info fs-7 mt-1">
                       {{ $portfolio->media_type == $mediaTypes[2] ? $portfolio->media['video']['relative_path'] : '' }}
@@ -179,7 +179,7 @@
                       {{ $portfolio->media_type == $mediaTypes[3] ? $portfolio->media['video_link']['frame'] : '' }}
                     </div>
                     <div class="text-info fs-7 mt-1">
-                      {{ $portfolio->media_type == $mediaTypes[3] ? 'وضعیت پردازش در آپارات: ' . aparat()->checkProcess($portfolio->media['video_link']['uid']) : '' }}
+                      {{ $portfolio->media_type == $mediaTypes[3] ? ' Processing status in the apparatus:' . aparat()->checkProcess($portfolio->media['video_link']['uid']) : '' }}
                     </div>
                     @error('video_link')
                       <div class="text-danger fs-7">
@@ -193,7 +193,7 @@
               <div class="my-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                   {{ old('status') || (!request()->old() && $portfolio->status == 1) ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -204,18 +204,18 @@
               @if (!is_null($portfolio->media))
                 <div class="col-8 px-5 mx-auto">
                   <div class="alert alert-info text-center">
-                    توجه: برای حذف همه‌ی رسانه‌ها می‌توانید از دکمه زیر استفاده کنید!
+                   Note: You can use the button below to remove all the media!
                   </div>
                 </div>
 
                 <div class="d-flex justify-content-center mb-3">
                   <a href="javascript:" onclick="document.getElementById('destroy-media-form').submit()"
-                    class="btn btn-danger w-25">حذف رسانه</a>
+                    class="btn btn-danger w-25">Removing the media</a>
                 </div>
               @endif
 
               <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary w-25">ارسال</button>
+                <button type="submit" class="btn btn-primary w-25">Send</button>
               </div>
             </form>
             {{-- For delete all media --}}

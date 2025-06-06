@@ -1,7 +1,7 @@
-@extends('admin.layouts.app', ['title' => 'نمونه کار | ایجاد'])
+@extends('admin.layouts.app', ['title' => 'Sample | Creating'])
 
 @php
-  $inputs = [['name' => 'title', 'title' => 'عنوان', 'type' => 'text'], ['name' => 'project_type', 'title' => 'نوع پروژه', 'type' => 'text'], ['name' => 'customer', 'title' => 'مشتری', 'type' => 'text'], ['name' => 'link', 'title' => 'لینک پروژه', 'type' => 'text'], ['name' => 'technology', 'title' => 'تکنولوژی', 'type' => 'text']];
+  $inputs = [['name' => 'title', 'title' => 'Title', 'type' => 'text'], ['name' => 'project_type', 'title' => 'Project type', 'type' => 'text'], ['name' => 'customer', 'title' => 'Customer', 'type' => 'text'], ['name' => 'link', 'title' => 'Project link', 'type' => 'text'], ['name' => 'technology', 'title' => 'Technology', 'type' => 'text']];
 @endphp
 
 @section('content')
@@ -9,18 +9,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'نمونه کار' => route('admin.panel.portfolios.index'),
-            'ایجاد' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Portfolio' => route('admin.panel.portfolios.index'),
+            'Creating' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ایجاد نمونه کار</h3>
+            <h3>Creating a sample </h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.portfolios.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -42,7 +42,7 @@
                 </div>
               @endforeach
               <div class="mb-3 col-md-6">
-                <label for="featured_image" class="form-label">تصویر شاخص</label>
+                <label for="featured_image" class="form-label">Image index</label>
                 <input type="file" name="featured_image" class="form-control" id="featured_image">
                 @error('featured_image')
                   <div class="text-danger fs-7">
@@ -53,8 +53,8 @@
 
               <div class="my-3 col-8 px-5 mx-auto">
                 <div class="alert alert-info text-center">
-                  توجه: برای رسانه نمونه کار خود، اجباری در استفاده از رسانه‌های زیر نیست و می‌توانید فقط از تصویر شاخص
-                  استفاده کنید!
+                 Note: For your portfolio media, it is not mandatory to use the following media and you can only from the index image
+                  Use!
                 </div>
               </div>
 
@@ -63,17 +63,17 @@
                   <button
                     class="nav-link {{ !session('media.has') ? 'active' : '' }}
                   {{ session("media.{$mediaTypes[1]}") ? 'active' : '' }}"
-                    data-bs-toggle="tab" data-bs-target="#tab1" type="button">رسانه
-                    اسلایدری</button>
+                    data-bs-toggle="tab" data-bs-target="#tab1" type="button">
+                    Slide Media</button>
                 </li>
                 <li class="nav-item">
                   <button class="nav-link {{ session("media.{$mediaTypes[2]}") ? 'active' : '' }}" data-bs-toggle="tab"
-                    data-bs-target="#tab2" type="button">رسانه
-                    ویدئویی</button>
+                    data-bs-target="#tab2" type="button">
+                    Video Media</button>
                 </li>
                 <li class="nav-item">
                   <button class="nav-link {{ session("media.{$mediaTypes[3]}") ? 'active' : '' }}" data-bs-toggle="tab"
-                    data-bs-target="#tab3" type="button">رسانه ویدئویی (آپلود در آپارات)</button>
+                    data-bs-target="#tab3" type="button">Video Media (Upload in Apartments)</button>
                 </li>
               </ul>
 
@@ -104,15 +104,15 @@
                     @enderror
 
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider">
                     </div>
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider">
                     </div>
                     <div class="mb-3 col-md-6">
-                      <label for="slider" class="form-label">تصویر</label>
+                      <label for="slider" class="form-label">Image</label>
                       <input type="file" name="slider[]" class="form-control" id="slider">
                     </div>
                   </div>
@@ -123,7 +123,7 @@
                   <input type="hidden" name="media_type" value="{{ $mediaTypes[2] }}">
 
                   <div class="mb-3 col-md-6 mx-auto">
-                    <label for="video" class="form-label">ویدئو</label>
+                    <label for="video" class="form-label">Video</label>
                     <input type="file" name="video" class="form-control" id="video">
                     @error('video')
                       <div class="text-danger fs-7">
@@ -138,7 +138,7 @@
                   <input type="hidden" name="media_type" value="{{ $mediaTypes[3] }}">
 
                   <div class="mb-3 col-md-6 mx-auto">
-                    <label for="video_link" class="form-label">ویدئو (Aparat)</label>
+                    <label for="video_link" class="form-label">Video</label>
                     <input type="file" name="video_link" class="form-control" id="video_link">
                     @error('video_link')
                       <div class="text-danger fs-7">
@@ -152,7 +152,7 @@
               <div class="my-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                   {{ old('status') ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -161,7 +161,7 @@
               @enderror
 
               <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary w-25">ارسال</button>
+                <button type="submit" class="btn btn-primary w-25">Send</button>
               </div>
             </form>
           </div>

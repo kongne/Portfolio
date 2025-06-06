@@ -1,4 +1,4 @@
-@extends('admin.layouts.app', ['title' => 'داشبورد'])
+@extends('admin.layouts.app', ['title' => 'Dashboard'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
@@ -17,7 +17,7 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <h6 class="fs-7 text-muted">تعداد مهارت‌ها</h6>
+                      <h6 class="fs-7 text-muted">Number of skills</h6>
                       </h6>
                       <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0" data-purecounter-end="18600">
                         {{ $skills['count'] }}
@@ -37,7 +37,7 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <h6 class="fs-7 text-muted">تعداد نمونه کارها</h6>
+                      <h6 class="fs-7 text-muted">Number of portfolio</h6>
                       <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0" data-purecounter-end="452">
                         {{ $portfolios['count'] }}
                       </h6>
@@ -56,7 +56,7 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <h6 class="fs-7 text-muted">تعداد مقالات</h6>
+                      <h6 class="fs-7 text-muted">Number of articles</h6>
                       </h6>
                       <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0" data-purecounter-end="126500">
                         {{ $blogs['count'] }}
@@ -76,7 +76,7 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <h6 class="fs-7 text-muted">تعداد پیام‌ها</h6>
+                      <h6 class="fs-7 text-muted">Number of messages</h6>
                       </h6>
                       <h6 class="fw-bold mb-0 purecounter" data-purecounter-start="0" data-purecounter-end="95600">
                         {{ $messages['count'] }}
@@ -93,18 +93,18 @@
             <div class="col-xl-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="fw-bold mb-0">آخرین پیام‌های دریافت شده</h5>
+                  <h5 class="fw-bold mb-0">The last received messages received</h5>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle">
                       <thead>
                         <tr>
-                          <th>نام</th>
-                          <th>ایمیل</th>
-                          <th>موضوع</th>
-                          <th>پیام</th>
-                          <th>وضعیت خواندن</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Subject</th>
+                          <th>Message</th>
+                          <th>Reading status</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -131,19 +131,19 @@
             <div class="col-xl-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="fw-bold mb-0">آخرین مقالات</h5>
+                  <h5 class="fw-bold mb-0">Last articles</h5>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle">
                       <thead>
                         <tr>
-                          <th>عنوان</th>
-                          <th>متن</th>
-                          <th>نویسنده</th>
-                          <th style="min-width: 6rem">کلمات کلیدی</th>
-                          <th>تصویر</th>
-                          <th>وضعیت</th>
+                          <th>Title</th>
+                          <th>Text</th>
+                          <th>Author</th>
+                          <th style="min-width: 6rem">Keywords</th>
+                          <th>Image</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -168,21 +168,21 @@
             <div class="col-xl-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="fw-bold mb-0">آخرین نمونه کارها</h5>
+                  <h5 class="fw-bold mb-0">Last portfolio</h5>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle">
                       <thead>
                         <tr>
-                          <th>عنوان</th>
-                          <th style="min-width: 5rem">نوع پروژه</th>
-                          <th>مشتری</th>
-                          <th>لینک پروژه</th>
-                          <th>تکنولوژی</th>
-                          <th style="min-width: 77px;">نوع رسانه</th>
-                          <th>تصویر شاخص</th>
-                          <th>وضعیت</th>
+                          <th>Title</th>
+                          <th style="min-width: 5rem">Project type</th>
+                          <th>Customer</th>
+                          <th>Project link</th>
+                          <th>Technology</th>
+                          <th style="min-width: 77px;">Media type</th>
+                          <th>Index image</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -209,7 +209,7 @@
             <div class="col-xl-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="fw-bold mb-0">آخرین مهارت‌های ثبت شده</h5>
+                  <h5 class="fw-bold mb-0">Last recorded skills</h5>
                   </h5>
                   </h5>
                 </div>

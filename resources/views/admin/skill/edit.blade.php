@@ -1,10 +1,10 @@
-@extends('admin.layouts.app', ['title' => 'مهارت‌های من | ویرایش'])
+@extends('admin.layouts.app', ['title' => 'My skills | Edit'])
 
 @php
   $inputs = [
-      ['name' => 'name', 'title' => 'نام', 'type' => 'text'],
-      ['name' => 'value', 'title' => 'مقدار مهارت (بین 0 تا 100)', 'type' => 'number'],
-      ['name' => 'category', 'title' => 'دسته بندی', 'type' => 'text'],
+      ['name' => 'name', 'title' => 'Name', 'type' => 'text'],
+      ['name' => 'value', 'title' => 'Skill value (between 0 and 100)', 'type' => 'number'],
+      ['name' => 'category', 'title' => 'Category', 'type' => 'text'],
   ];
 @endphp
 
@@ -13,18 +13,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'مهارت‌های من' => route('admin.panel.about.skills.index'),
-            'ویرایش' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'My skills' => route('admin.panel.about.skills.index'),
+            'Edit' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ویرایش مهارت‌</h3>
+            <h3>Edit Skills</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.skills.index') }}">
-              بازگشت
+                Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -48,7 +48,7 @@
               <div class="mb-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                 {{ old('status') || !request()->old() && $skill->status == 1 ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -56,7 +56,7 @@
                 </div>
               @enderror
 
-              <button type="submit" class="btn btn-primary w-25">ارسال</button>
+              <button type="submit" class="btn btn-primary w-25">Send</button>
             </form>
           </div>
         </div>

@@ -1,21 +1,21 @@
-@extends('admin.layouts.app', ['title' => 'نمونه کار'])
+@extends('admin.layouts.app', ['title' => ''])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'نمونه کار' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Sample' => '',
             ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>نمونه کار</h3>
+            <h3>Sample</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.portfolios.create') }}">
-              ایجاد
+              Creating
               <i class="bi bi-plus-circle"></i>
             </a>
           </div>
@@ -25,15 +25,15 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>عنوان</th>
-                    <th style="min-width: 5rem">نوع پروژه</th>
-                    <th>مشتری</th>
-                    <th>لینک پروژه</th>
-                    <th>تکنولوژی</th>
-                    <th style="min-width: 77px;">نوع رسانه</th>
-                    <th>تصویر شاخص</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Title</th>
+                    <th style="min-width: 5rem">Project type</th>
+                    <th>Customer</th>
+                    <th>Project link</th>
+                    <th>Technology</th>
+                    <th style="min-width: 77px;">Media type</th>
+                    <th>Index image</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -52,11 +52,11 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.portfolios.edit', ['portfolio' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.portfolios.edit', ['portfolio' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.portfolios.destroy', ['portfolio' => $item->id]) }}" method="post"
@@ -64,7 +64,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

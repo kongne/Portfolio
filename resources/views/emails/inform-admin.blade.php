@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
@@ -51,7 +51,7 @@
     <p style="white-space: pre-wrap;">{{ $content }}</p>
 
     <div class="center">
-		<a href="{{ route('admin.panel.contact.messages.show', ['message' => $messageID]) }}">لینک پیام کاربر</a>
+		<a href="{{ route('admin.panel.contact.messages.show', ['message' => $messageID]) }}">User message link</a>
 	</div>
   </div>
 </body>

@@ -1,7 +1,7 @@
-@extends('admin.layouts.app', ['title' => 'تجربه و تحصیلات من | ایجاد'])
+@extends('admin.layouts.app', ['title' => 'My Experience and Education Creation'])
 
 @php
-  $inputs = [['name' => 'period', 'title' => 'دوره زمانی', 'type' => 'text'], ['name' => 'title', 'title' => 'عنوان', 'type' => 'text'], ['name' => 'descriptions', 'title' => 'توضیحات', 'type' => 'text']];
+  $inputs = [['name' => 'period', 'title' => 'Period', 'type' => 'text'], ['name' => 'title', 'title' => 'Title', 'type' => 'text'], ['name' => 'descriptions', 'title' => 'Description', 'type' => 'text']];
 @endphp
 
 @section('content')
@@ -9,18 +9,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'تجربه و تحصیلات من' => route('admin.panel.about.qualifications.index'),
-            'ایجاد' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'My experience and education' => route('admin.panel.about.qualifications.index'),
+            'Creating' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ایجاد تجربه و تحصیلات</h3>
+            <h3>Creating experience and education</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.qualifications.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -42,7 +42,7 @@
               @endforeach
 
               <div class="mb-3 col-md-6">
-                <label class="form-label" for="status">نوع</label>
+                <label class="form-label" for="status">Type</label>
                 <select name="type" class="form-select form-select">
                   @foreach ($types as $type)
                     <option {{ old('type') == $type ? 'selected' : '' }} value="{{ $type }}">{{ $type }}</option>
@@ -58,7 +58,7 @@
               <div class="mb-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                   {{ old('status') ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -66,7 +66,7 @@
                 </div>
               @enderror
 
-              <button type="submit" class="btn btn-primary w-25">ارسال</button>
+              <button type="submit" class="btn btn-primary w-25">Send</button>
             </form>
           </div>
         </div>

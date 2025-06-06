@@ -1,23 +1,23 @@
-@extends('admin.layouts.app', ['title' => 'پیام‌های من'])
+@extends('admin.layouts.app', ['title' => 'My messages'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'پیام‌های من' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'My messages' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>پیام‌های من</h3>
+            <h3>My messages</h3>
             <div>
-              <a href="{{ route('admin.panel.contact.messages.index', ['is_read' => true]) }}" class="btn btn-light-primary">پیام‌های خوانده شده</a>
-              <a href="{{ route('admin.panel.contact.messages.index', ['is_read' => false]) }}" class="btn btn-light-primary">پیام‌های خوانده نشده</a>
-              <a href="{{ route('admin.panel.contact.messages.index') }}" class="btn btn-light-primary">همه پیام‌ها</a>
+              <a href="{{ route('admin.panel.contact.messages.index', ['is_read' => true]) }}" class="btn btn-light-primary">Readed messages</a>
+              <a href="{{ route('admin.panel.contact.messages.index', ['is_read' => false]) }}" class="btn btn-light-primary">Unread messages</a>
+              <a href="{{ route('admin.panel.contact.messages.index') }}" class="btn btn-light-primary">All messages</a>
             </div>
           </div>
           <div class="card-body">
@@ -26,12 +26,12 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>نام</th>
-                    <th>ایمیل</th>
-                    <th>موضوع</th>
-                    <th>پیام</th>
-                    <th>وضعیت خواندن</th>
-                    <th>عملیات</th>
+                    <th> Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Reading status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -47,11 +47,11 @@
                       <td>
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.contact.messages.show', ['message' => $item->id]) }}">نمایش</a>
+                                href="{{ route('admin.panel.contact.messages.show', ['message' => $item->id]) }}">View</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.contact.messages.destroy', ['message' => $item->id]) }}"
@@ -59,7 +59,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

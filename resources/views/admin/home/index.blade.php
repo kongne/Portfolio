@@ -1,12 +1,12 @@
-@extends('admin.layouts.app', ['title' => 'خانه'])
+@extends('admin.layouts.app', ['title' => 'Home'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'خانه' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Home' => '',
             ]"></x-breadcrumbs>
         {{-- <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -20,9 +20,9 @@
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>خانه</h3>
+            <h3>Home</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.home.create') }}">
-              ایجاد
+              Creating
               <i class="bi bi-plus-circle"></i>
             </a>
           </div>
@@ -32,12 +32,12 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>عنوان</th>
-                    <th>زیرعنوان</th>
-                    <th>توضیحات</th>
-                    <th>تصویر</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Title</th>
+                    <th>Substance</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,11 +53,11 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.home.edit', ['home' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.home.edit', ['home' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.home.destroy', ['home' => $item->id]) }}" method="post"
@@ -65,7 +65,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

@@ -1,19 +1,19 @@
-@extends('admin.layouts.app', ['title' => 'تجربه و تحصیلات من'])
+@extends('admin.layouts.app', ['title' => 'My experience and education'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'تجربه و تحصیلات من' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'My experience and education' => '',
             ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>تجربه و تحصیلات من</h3>
+            <h3>My experience and education</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.qualifications.create') }}">
               ایجاد
               <i class="bi bi-plus-circle"></i>
@@ -25,12 +25,12 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>دوره زمانی</th>
-                    <th>نام</th>
-                    <th>توضیحات</th>
-                    <th>نوع</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Period</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -46,11 +46,11 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.about.qualifications.edit', ['qualification' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.about.qualifications.edit', ['qualification' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.about.qualifications.destroy', ['qualification' => $item->id]) }}" method="post"
@@ -58,7 +58,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

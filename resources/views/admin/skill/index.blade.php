@@ -1,21 +1,21 @@
-@extends('admin.layouts.app', ['title' => 'مهارت‌های من'])
+@extends('admin.layouts.app', ['title' => 'My skills'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'مهارت‌های من' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'My skills' => '',
             ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>مهارت‌های من</h3>
+            <h3>My skills</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.skills.create') }}">
-              ایجاد
+              Creating
               <i class="bi bi-plus-circle"></i>
             </a>
           </div>
@@ -25,11 +25,11 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>نام</th>
-                    <th>مقدار</th>
-                    <th>دسته بندی</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Name</th>
+                    <th>The amount</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -48,7 +48,7 @@
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.about.skills.edit', ['skill' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.about.skills.edit', ['skill' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.about.skills.destroy', ['skill' => $item->id]) }}" method="post"
@@ -56,7 +56,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>
