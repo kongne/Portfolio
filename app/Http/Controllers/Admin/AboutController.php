@@ -28,7 +28,7 @@ class AboutController extends Controller
         ];
         $about = About::create($data);
         disableAllStatus(About::class, $request->has('status'), $about->id);
-        return to_route('admin.panel.about.personal.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+        return to_route('admin.panel.about.personal.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(About $about)
@@ -50,7 +50,7 @@ class AboutController extends Controller
         }
         $about->updateOrFail($data);
         disableAllStatus(About::class, $request->has('status'), $about->id, true);
-        return to_route('admin.panel.about.personal.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+        return to_route('admin.panel.about.personal.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(About $about)
@@ -61,9 +61,9 @@ class AboutController extends Controller
             ));
             $about->delete();
 
-            return redirect()->back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+            return redirect()->back()->with(['success' => 'Removal Operation successfully carried out']);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => 'عملیات حذف با موفقیت انجام نشد']);
+            return redirect()->back()->with(['error' => 'The removal operation failed successfully.']);
         }
     }
 }

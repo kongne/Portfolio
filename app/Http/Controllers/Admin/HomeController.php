@@ -42,7 +42,7 @@ class HomeController extends Controller
             'status' => $status,
         ]);
         disableAllStatus(Home::class, $status, $home->id);
-        return to_route('admin.panel.home.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+        return to_route('admin.panel.home.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(Home $home)
@@ -68,7 +68,7 @@ class HomeController extends Controller
 
         $home->updateOrFail($data);
         disableAllStatus(Home::class, $data['status'], $home->id, true);
-        return to_route('admin.panel.home.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+        return to_route('admin.panel.home.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(Home $home)
@@ -80,9 +80,9 @@ class HomeController extends Controller
             image_delete($mobileImagePath);
             $home->delete();
 
-            return redirect()->back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+            return redirect()->back()->with(['success' => 'Removal Operation successfully carried out']);
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => 'عملیات حذف با موفقیت انجام نشد']);
+            return redirect()->back()->with(['error' => 'The removal operation failed successfully.']);
         }
     }
 

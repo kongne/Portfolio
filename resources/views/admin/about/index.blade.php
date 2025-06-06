@@ -1,21 +1,21 @@
-@extends('admin.layouts.app', ['title' => 'اطلاعات شخصی'])
+@extends('admin.layouts.app', ['title' => 'Personal Information'])
 
 @section('content')
   <div class="content p-2 p-lg-4">
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'اطلاعات شخصی' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Personal Information' => '',
             ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>اطلاعات شخصی</h3>
+            <h3>Personal Information</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.about.personal.create') }}">
-              ایجاد
+              Creating
               <i class="bi bi-plus-circle"></i>
             </a>
           </div>
@@ -25,22 +25,22 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>نام</th>
-                    <th class="family">نام خاوادگی</th>
-                    <th>سن</th>
-                    <th>ملیت</th>
-                    <th>شغل</th>
-                    <th>آدرس</th>
-                    <th>شماره تماس</th>
-                    <th>ایمیل</th>
-                    <th>گیت‌هاب</th>
-                    <th>زبان</th>
-                    <th>فایل رزومه</th>
-                    <th>تجربه</th>
-                    <th>پروژه</th>
-                    <th>جایزه</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>Name</th>
+                    <th class="family">lastname</th>
+                    <th>Age</th>
+                    <th>Nationality</th>
+                    <th>Job</th>
+                    <th>Address</th>
+                    <th></th>
+                    <th>Contact number</th>
+                    <th>Github</th>
+                    <th>Language</th>
+                    <th>Resume file</th>
+                    <th>Experience</th>
+                    <th>Project</th>
+                    <th>Prize</th>
+                    <th>Status</th>
+                    <th>Operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -66,11 +66,11 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item"
-                                href="{{ route('admin.panel.about.personal.edit', ['personal' => $item->id]) }}">ویرایش</a>
+                                href="{{ route('admin.panel.about.personal.edit', ['personal' => $item->id]) }}">Edit</a>
                             </li>
                             <li>
                               <form action="{{ route('admin.panel.about.personal.destroy', ['personal' => $item->id]) }}" method="post"
@@ -78,7 +78,7 @@
                                 @csrf
                                 @method('delete')
                                 <a class="dropdown-item" href="javascript:"
-                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">حذف</a>
+                                  onclick="document.getElementById('form-{{ $loop->iteration }}').submit()">Remove</a>
                               </form>
                             </li>
                           </ul>

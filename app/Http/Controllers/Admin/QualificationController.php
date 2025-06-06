@@ -24,7 +24,7 @@ class QualificationController extends Controller
     {
         $request['status'] = $request->has('status');
         Qualification::create($request->all());
-        return to_route('admin.panel.about.qualifications.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+        return to_route('admin.panel.about.qualifications.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(Qualification $qualification)
@@ -38,13 +38,13 @@ class QualificationController extends Controller
         $request['status'] = $request->has('status');
         $qualification->updateOrFail($request->all());
 
-		return to_route('admin.panel.about.qualifications.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+		return to_route('admin.panel.about.qualifications.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(Qualification $qualification)
     {
         $qualification->delete();
 
-		return redirect()->back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+		return redirect()->back()->with(['success' => 'Removal Operation successfully carried out']);
     }
 }

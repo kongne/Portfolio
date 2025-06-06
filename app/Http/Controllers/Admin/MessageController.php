@@ -29,7 +29,7 @@ class MessageController extends Controller
         $data = $request->except(['response', 'is_read']);
         $message = Message::create($data);
         Notification::send($message, new AdminHasMessage);
-		return back()->with(['success' => 'پیام شما با موفقیت ارسال شد! بزودی به پیام شما پاسخ داده خواهد شد.']);
+		return back()->with(['success' => 'Your message was successfully sent! Will be answered to your message soon.']);
     }
 
     public function show(Message $message)
@@ -41,7 +41,7 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
         $message->delete();
-        return back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+        return back()->with(['success' => 'Removal Operation successfully carried out']);
     }
 
     public function sendResponse(Message $message, Request $request)
@@ -53,21 +53,21 @@ class MessageController extends Controller
         ]);
 
         if ($message->response != null) {
-            return back()->with(['error' => 'شما قبلا به این پیام پاسخ داده‌اید!']);
+            return back()->with(['error' => 'You have already answered this message!']);
         }
 
         $this->sendResponseMail($message, $request);
 
         $message->update($data);
-		return back()->with(['success' => 'پاسخ شما با موفقیت ارسال شد!']);
+		return back()->with(['success' => 'Your reply was successfully sent!']);
     }
 
     private function sendResponseMail($message, $request)
     {
         try {
-            Mail::to($message->email)->send(new SendResponseEmail('پاسخ پیام شما', $request->response));
+            Mail::to($message->email)->send(new SendResponseEmail('Reply to your message', $request->response));
         } catch (\Exception $e) {
-            return back()->with(['error' => 'پاسخ شما با موفقیت ارسال نشد!']);
+            return back()->with(['error' => 'Your answer was not successfully sent!']);
         }
     }
 }

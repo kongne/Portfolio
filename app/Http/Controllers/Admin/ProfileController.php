@@ -22,7 +22,7 @@ class ProfileController extends Controller
         ]);
 
         auth()->user()->update($validated);
-        return back()->with('success', 'پروفایل با موفقیت بروزرسانی شد!');
+        return back()->with('success', 'Profile successfully updated!');
     }
 
     public function changePassword(Request $request)
@@ -35,6 +35,6 @@ class ProfileController extends Controller
         auth()->user()->update([
             'password' => Hash::make($validated['password'])
         ]);
-        return back()->with('success', 'رمزعبور با موفقیت بروزرسانی شد!');
+        return back()->with('success', 'The password was successfully updated!');
     }
 }

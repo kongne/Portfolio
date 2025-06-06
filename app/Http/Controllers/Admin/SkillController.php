@@ -23,7 +23,7 @@ class SkillController extends Controller
     {
         $request['status'] = $request->has('status');
         Skill::create($request->all());
-		return to_route('admin.panel.about.skills.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+		return to_route('admin.panel.about.skills.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(Skill $skill)
@@ -35,12 +35,12 @@ class SkillController extends Controller
     {
         $request['status'] = $request->has('status');
         $skill->updateOrFail($request->all());
-		return to_route('admin.panel.about.skills.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+		return to_route('admin.panel.about.skills.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(Skill $skill)
     {
         $skill->delete();
-		return back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+		return back()->with(['success' => 'Removal Operation successfully carried out']);
     }
 }

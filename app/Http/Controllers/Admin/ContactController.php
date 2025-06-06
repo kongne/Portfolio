@@ -25,7 +25,7 @@ class ContactController extends Controller
 
         $contact = Contact::create($request->all());
         disableAllStatus(Contact::class, $request->has('status'), $contact->id);
-		return to_route('admin.panel.contact.details.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+		return to_route('admin.panel.contact.details.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(Contact $contact)
@@ -38,13 +38,13 @@ class ContactController extends Controller
         $request['status'] = $request->has('status');
         $contact->updateOrFail($request->all());
         disableAllStatus(Contact::class, $request->has('status'), $contact->id, true);
-		return to_route('admin.panel.contact.details.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+		return to_route('admin.panel.contact.details.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(Contact $contact)
     {
         $contact->delete();
 
-		return redirect()->back()->with(['success' => 'عملیات حذف با موفقیت انجام شد']);
+		return redirect()->back()->with(['success' => 'Removal Operation successfully carried out']);
     }
 }

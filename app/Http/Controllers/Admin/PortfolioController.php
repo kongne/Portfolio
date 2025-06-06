@@ -40,9 +40,9 @@ class PortfolioController extends Controller
             $inputs['media_type'] = 'image';
 
         if ($this->checkFileUpload($request, $inputs))
-            return back()->with(['error' => 'عملیات آپلود فایل با موفقیت انجام نشد'])->withInput();
+            return back()->with(['error' => 'File upload operation failed successfully'])->withInput();
         Portfolio::create($inputs);
-        return to_route('admin.panel.portfolios.index')->with(['success' => 'عملیات ایجاد با موفقیت انجام شد']);
+        return to_route('admin.panel.portfolios.index')->with(['success' => 'Created operations successfully carried out']);
     }
 
     public function edit(Portfolio $portfolio)
@@ -72,9 +72,9 @@ class PortfolioController extends Controller
             $inputs['media_type'] = 'image';
 
         if ($this->checkFileUpload($request, $inputs))
-            return back()->with(['error' => 'عملیات آپلود فایل با موفقیت انجام نشد'])->withInput();
+            return back()->with(['error' => 'File upload operation failed successfully'])->withInput();
         $portfolio->updateOrFail($inputs);
-        return to_route('admin.panel.portfolios.index')->with(['success' => 'عملیات ویرایش با موفقیت انجام شد']);
+        return to_route('admin.panel.portfolios.index')->with(['success' => 'The editing operation was successfully carried out']);
     }
 
     public function destroy(Portfolio $portfolio)
@@ -84,14 +84,14 @@ class PortfolioController extends Controller
 
         $portfolio->delete();
 
-        return back()->with(['success' => 'عملیات حذف با موفقیت انجام شد!']);
+        return back()->with(['success' => 'Removal Operation successfully carried out!']);
     }
 
     public function destroyMedia(Portfolio $portfolio)
     {
         $this->deleteAnyMedia($portfolio);
         $portfolio->updateOrFail(['media_type' => 'image', 'media' => null]);
-        return back()->with(['success' => 'عملیات حذف رسانه‌های نمونه‌کار موردنظر، با موفقیت انجام شد!']);
+        return back()->with(['success' => 'The removal of the sample media in question was successfully carried out!']);
     }
 
     private function deleteAnyMedia($portfolio)
@@ -188,7 +188,7 @@ class PortfolioController extends Controller
             }
             return $media;
         } catch (\Exception $e) {
-            return back()->with(['error' => 'عملیات حذف با موفقیت انجام نشد']);
+            return back()->with(['error' => 'The removal operation failed successfully.']);
         }
     }
 
@@ -198,7 +198,7 @@ class PortfolioController extends Controller
             $path = public_path($filePath);
             file_delete($path);
         } catch (\Exception $e) {
-            return back()->with(['error' => 'عملیات حذف با موفقیت انجام نشد']);
+            return back()->with(['error' => 'The removal operation failed successfully.']);
         }
     }
 
@@ -212,7 +212,7 @@ class PortfolioController extends Controller
             }
             rmdir($dir);
         } catch (\Exception $e) {
-            return back()->with(['error' => 'عملیات حذف با موفقیت انجام نشد']);
+            return back()->with(['error' => 'The removal operation failed successfully.']);
         }
     }
 
@@ -221,7 +221,7 @@ class PortfolioController extends Controller
         try {
             $this->aparat->deleteVideo($portfolio['media']['video_link']['uid']);
         } catch (\Throwable $th) {
-            return back()->with(['error' => 'عملیات حذف فایل با موفقیت انجام نشد'])->withInput();
+            return back()->with(['error' => 'File deleting operation failed to perform successfully'])->withInput();
         }
     }
 
