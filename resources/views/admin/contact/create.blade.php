@@ -1,15 +1,15 @@
-@extends('admin.layouts.app', ['title' => 'راه‌های ارتباطی | ایجاد'])
+@extends('admin.layouts.app', ['title' => 'Communication Ways | Creating'])
 
 @php
   $inputs = [
-      ['name' => 'title', 'title' => 'عنوان', 'type' => 'text'],
-      ['name' => 'email', 'title' => 'ایمیل', 'type' => 'text'],
-      ['name' => 'phone_number', 'title' => 'شماره تماس', 'type' => 'text'],
-      ['name' => 'telegram', 'title' => 'تلگرام', 'type' => 'text'],
-      ['name' => 'instagram', 'title' => 'اینستاگرام', 'type' => 'text'],
-      ['name' => 'youtube', 'title' => 'یوتیوب', 'type' => 'text'],
-      ['name' => 'linkedin', 'title' => 'لینکدین', 'type' => 'text'],
-      ['name' => 'github', 'title' => 'گیت‌هاب', 'type' => 'text'],
+      ['name' => 'title', 'title' => 'Title', 'type' => 'text'],
+      ['name' => 'email', 'title' => 'Email', 'type' => 'text'],
+      ['name' => 'phone_number', 'title' => 'Phone number', 'type' => 'text'],
+      ['name' => 'telegram', 'title' => 'Telegram', 'type' => 'text'],
+      ['name' => 'instagram', 'title' => 'Instagram', 'type' => 'text'],
+      ['name' => 'youtube', 'title' => 'YouTube', 'type' => 'text'],
+      ['name' => 'linkedin', 'title' => 'LinkedIn', 'type' => 'text'],
+      ['name' => 'github', 'title' => 'GitHub', 'type' => 'text'],
   ];
 @endphp
 
@@ -18,18 +18,18 @@
     <div class="container-fluid">
       <div class="row">
         <x-breadcrumbs :routes="[
-            'پنل ادمین' => route('admin.panel.dashboard'),
-            'راه‌های ارتباطی' => route('admin.panel.contact.details.index'),
-            'ایجاد' => '',
+            'Admin panel' => route('admin.panel.dashboard'),
+            'Communication ways' => route('admin.panel.contact.details.index'),
+            'Creating' => '',
         ]"></x-breadcrumbs>
       </div>
 
       <div class="row">
         <div class="card">
           <div class="card-header d-flex justify-content-between">
-            <h3>ایجاد راه ارتباطی</h3>
+            <h3>Creating a communication way</h3>
             <a class="btn btn-light-primary" href="{{ route('admin.panel.contact.details.index') }}">
-              بازگشت
+              Return
               <i class="bi bi-arrow-90deg-left"></i>
             </a>
           </div>
@@ -50,7 +50,7 @@
               @endforeach
 
               <div class="mb-3 col-md-6">
-                <label for="description" class="form-label">توضیحات</label>
+                <label for="description" class="form-label">Description</label>
                   <textarea name="description" id="description" class="form-control" rows="3">{{ old('description') }}</textarea>
                 @error('description')
                   <div class="text-danger fs-7">
@@ -62,7 +62,7 @@
               <div class="mb-3 form-check d-flex justify-content-center">
                 <input type="checkbox" name="status" class="form-check-input me-2" id="status"
                   {{ old('status') ? 'checked' : '' }}>
-                <label class="form-check-label" for="status">وضعیت</label>
+                <label class="form-check-label" for="status">Status</label>
               </div>
               @error('status')
                 <div class="text-danger fs-7 text-center" style="margin: -1rem 0 1rem 0;">
@@ -70,7 +70,7 @@
                 </div>
               @enderror
 
-              <button type="submit" class="btn btn-primary w-25">ارسال</button>
+              <button type="submit" class="btn btn-primary w-25">Send</button>
             </form>
           </div>
         </div>
