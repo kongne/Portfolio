@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'fa',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,8 +108,8 @@ return [
     |
     */
 
-    // 'faker_locale' => 'en_US',
-    'faker_locale' => 'fa_IR',
+    'faker_locale' => 'en_US',
+    //'faker_locale' => 'fa_IR',
 
     /*
     |--------------------------------------------------------------------------

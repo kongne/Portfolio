@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header py-3 d-flex justify-content-between">
                         <h4>Admin Panel</h4>
-                        <a class="btn btn-outline-secondary" href="{{ route('home') }}">Home</a>
+                        <a class="btn btn-outline-secondary" href="{{ route('home') }}">{{__('Home')}}</a>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

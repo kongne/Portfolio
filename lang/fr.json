@@ -1,0 +1,40 @@
+{
+    "bienvenue": {
+        "testing" : [
+            "en",
+            "fr"
+        ],
+        "welcome": "Bienvenue sur notre site !",
+        "description": "Nous sommes ravis de vous accueillir. Explorez nos fonctionnalités et profitez de votre expérience.",
+        "get_started": "Commencer",
+        "learn_more": "En savoir plus",
+        "contact_us": "Contactez-nous",
+        "privacy_policy": "Politique de confidentialité",
+        "terms_of_service": "Conditions d’utilisation"
+    },
+    "erreur": {
+        "not_found": "Page non trouvée",
+        "server_error": "Erreur du serveur",
+        "unauthorized": "Accès non autorisé",
+        "forbidden": "Accès interdit",
+        "bad_request": "Mauvaise requête",
+        "internal_error": "Erreur interne",
+        "service_unavailable": "Service indisponible"
+    },
+    "auth": {
+        "login": "Connexion",
+        "logout": "Déconnexion",
+        "register": "Inscription",
+        "reset_password": "Réinitialiser le mot de passe",
+        "forgot_password": "Mot de passe oublié",
+        "email": "Adresse e-mail",
+        "password": "Mot de passe",
+        "remember_me": "Se souvenir de moi",
+        "verify_email": "Vérifier l'adresse e-mail",
+        "send_verification_link": "Envoyer le lien de vérification",
+        "reset_link_sent": "Lien de réinitialisation envoyé",
+        "account_created": "Compte créé avec succès",
+        "account_updated": "Compte mis à jour avec succès",
+        "password_updated": "Mot de passe mis à jour avec succès"
+    }
+}

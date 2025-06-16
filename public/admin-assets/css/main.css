@@ -9,6 +9,16 @@
     /* Safari, Android, iOS */
 }
 
+@font-face{
+     font-family: 'BespokeStencil-Bold';
+     src: url('../fonts/BespokeStencil-Bold.woff2') format('woff2'),
+       url('../fonts/BespokeStencil-Bold.woff') format('woff'),
+       url('../fonts/BespokeStencil-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
@@ -221,7 +231,8 @@ body {
 
 @media (min-width: 992px) {
     .main {
-        margin-right: 280px;
+        /*margin-right: 280px;*/
+        margin-left: 280px; 
     }
 }
 

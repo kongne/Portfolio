@@ -44,7 +44,7 @@
                         <div class="dropdown">
                           <button class="btn btn-light-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            عملیات
+                            Operations
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item"

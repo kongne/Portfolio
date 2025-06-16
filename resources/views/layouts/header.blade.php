@@ -34,6 +34,13 @@
       </a>
     </li>
   </ul>
+ <div class="header-language-selector">
+    <select id="locale" class="form-control">
+        <option value="en" {{ session('locale') == 'en' ? 'selected' : '' }}>English</option>
+        <option value="fr" {{ session('locale') == 'fr' ? 'selected' : '' }}>French</option>
+        <option value="es" {{ session('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
+    </select>
+</div>
   <!-- Fixed Navigation Ends -->
   <!-- Mobile Menu Starts -->
   <nav role="navigation" class="d-block d-lg-none">
@@ -64,3 +71,10 @@
   <!-- Mobile Menu Ends -->
 </header>
 <!-- Header Ends -->
+
+<script>
+    $('#locale').on('change', function() {
+        $.cookie('locale', $(this).val());
+        window.location.reload();
+    });
+</script>

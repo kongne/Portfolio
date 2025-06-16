@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <title>{{ config('admin.local-name') . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+   <!-- tab icon display -->
+<link rel="icon" href="{{ asset('junignito.png') }}" type="image/png" sizes="32x32">
   <!-- Template Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">

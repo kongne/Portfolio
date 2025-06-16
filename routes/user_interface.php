@@ -7,10 +7,18 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
+//use App\Http\Middleware\SetLocale;
 
+//Route::prefix('{locale}')
+//->middleware(SetLocale::class)
+//->group(function (){
+// define all our user-interfaces to the desired language
+
+//
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 
+//Route::get('{locale}/about', 'AboutController@index')->where('locale', 'en|fr|es');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

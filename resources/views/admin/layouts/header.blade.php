@@ -8,7 +8,7 @@
 
 @endphp
 
-<header class="header d-flex justify-content-between p-3 align-items-center">
+<header class="header d-flex fixed justify-content-between p-3 align-items-center shadow-sm">
   <div>
     <a href="#">
       <i @click="toggle" class="toggle-sidebar-icon bi bi-justify fs-3"></i>

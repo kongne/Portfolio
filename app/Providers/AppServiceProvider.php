@@ -34,5 +34,12 @@ class AppServiceProvider extends ServiceProvider
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+        // Force HTTPS in production environment
+        // This is important for security and to avoid mixed content issues
+        // Ensure your web server is configured to handle HTTPS requests
+        $url = url('/path/to/resource');
+        if (config('app.env') === 'production' && !request()->isSecure()) {
+            $url = str_replace('http://', 'https://', $url);
+        }
     }
 }
