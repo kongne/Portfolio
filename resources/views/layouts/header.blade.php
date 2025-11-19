@@ -34,13 +34,13 @@
       </a>
     </li>
   </ul>
- <div class="header-language-selector">
+ <!--<div class="header-language-selector">
     <select id="locale" class="form-control">
         <option value="en" {{ session('locale') == 'en' ? 'selected' : '' }}>English</option>
         <option value="fr" {{ session('locale') == 'fr' ? 'selected' : '' }}>French</option>
         <option value="es" {{ session('locale') == 'es' ? 'selected' : '' }}>Spanish</option>
     </select>
-</div>
+</div>-->
   <!-- Fixed Navigation Ends -->
   <!-- Mobile Menu Starts -->
   <nav role="navigation" class="d-block d-lg-none">

@@ -1,5 +1,5 @@
 <section x-cloak class="sidebar" :class="open || 'inactive'">
-  <div class="d-flex align-items-center justify-content-between justify-content-lg-center">
+  <div class="d-flex align-items-center justify-content-lg-end">
     <h4 class="fw-bold">{{ config('admin.local-name') }}</h4>
     <i @click="toggle" class="d-lg-none fs-1 bi bi-x" style="cursor: pointer"></i>
   </div>

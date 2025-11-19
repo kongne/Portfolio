@@ -49,7 +49,7 @@
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script> --}}
   <script src="{{ asset('admin-assets/js/alpineComponents.js') }}"></script>
-  <script src="{{ asset('build/assets/app-575acb37.js') }}"></script>
+  <script src="{{ asset('build/assets/app-BJLiTtM9.js') }}"></script>
   @include('sweetalert::alert')
 
   @stack('scripts')
