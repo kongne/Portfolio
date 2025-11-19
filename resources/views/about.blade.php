@@ -82,14 +82,14 @@
             </div>
             <div class="col-6">
               <div class="box-stats with-margin">
-                <h3 class="poppins-font position-relative">{{ $aboutData->projects }}</h3>
+                <h3 class="stencil-emphasis position-relative">{{ $aboutData->projects }}</h3>
                 <p class="open-sans-font m-0 position-relative text-uppercase">Projects <span class="d-block">Completed</span>
                 </p>
               </div>
             </div>
             <div class="col-6">
               <div class="box-stats">
-                <h3 class="poppins-font position-relative">{{ $aboutData->awards }}</h3>
+                <h3 class="stencil-emphasis position-relative">{{ $aboutData->awards }}</h3>
                 <p class="open-sans-font m-0 position-relative text-uppercase">Prize<span class="d-block"> Awarded</span></p>
               </div>
             </div>

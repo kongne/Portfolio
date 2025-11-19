@@ -6,7 +6,7 @@
       <div class="row">
         <x-breadcrumbs :routes="[
             'Admin panel' => route('admin.panel.dashboard'),
-            'Personal Information' => '',
+            '/ Personal Information' => '',
             ]"></x-breadcrumbs>
       </div>
 

@@ -7,7 +7,7 @@
         <x-breadcrumbs :routes="[
             'Admin panel' => route('admin.panel.dashboard'),
             '/ My messages' => route('admin.panel.contact.messages.index'),
-            '/ View message' => '',
+            ' View message' => '',
         ]"></x-breadcrumbs>
       </div>
 
