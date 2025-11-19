@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>{{ config('admin.local-name') . (isset($title) && !empty($title) ? " | $title" : '') }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="{{ asset('front/js/jquery-3.5.0.min.js') }}"></script>
    <!-- tab icon display -->
 <link rel="icon" href="{{ asset('junignito.png') }}" type="image/png" sizes="32x32">
   <!-- Template Google Fonts -->
