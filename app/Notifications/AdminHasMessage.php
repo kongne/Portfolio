@@ -21,9 +21,9 @@ class AdminHasMessage extends Notification
         public $greeting = null,
         public $content = null,
     ) {
-        $this->subject = $this->subject ?? 'پیام جدید دارید';
-        $this->greeting = $this->greeting ?? 'سلام ' . config('admin.local-name') . ' عزیز، امیدوارم حالت خوب باشه!';
-        $this->content = $this->content ?? 'شما یک پیام جدید دارید!';
+        $this->subject = $this->subject ?? 'You have a new message.';
+        $this->greeting = $this->greeting ?? 'Hello ' . config('admin.local-name') . ' Dear, I hope you are doing well!';
+        $this->content = $this->content ?? 'You have a new message! Please check your admin panel to see the details of the message.';
     }
 
     /**
